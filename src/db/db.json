@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "age": 22,
+      "password": "1234",
+      "isAdmin": true,
+      "id": 1,
+      "email": "nicolasfalla15@gmail.com",
+      "name": "Nico"
+    },
+    {
+      "age": 22,
+      "password": "1234",
+      "isAdmin": true,
+      "id": 2,
+      "email": "nicolasfalla15@gmail.com",
+      "name": "Nicolas Falla"
+    },
+    {
+      "age": 21,
+      "password": "1234",
+      "isAdmin": true,
+      "id": 3,
+      "email": "nicolasfalla15@gmail.com",
+      "name": "Nicolas Falla"
+    },
+    {
+      "age": 22,
+      "password": "111",
+      "isAdmin": false,
+      "id": 4,
+      "email": "nicolasfalla15@gmail.com",
+      "name": "nicks.falla@gmail.com"
+    },
+    {
+      "age": 22,
+      "password": "1234",
+      "isAdmin": true,
+      "id": 5,
+      "email": "nicolasfalla15@gmail.com",
+      "name": "Nicolas"
+    }
+  ],
+  "rol": [
+    {
+      "id": 1,
+      "description": "Administrador"
+    },
+    {
+      "id": 2,
+      "description": "Usuario"
+    }
+  ]
+}

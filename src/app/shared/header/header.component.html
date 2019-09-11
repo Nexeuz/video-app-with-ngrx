@@ -1,0 +1,25 @@
+<mat-toolbar
+  class="mat-elevation-z5 mg-btn-40 d-flex d-flex-justify-space-between"
+  color="primary">
+  <h1>Videos tarzán</h1>
+
+  <div
+    id="container-header"
+    class="d-flex d-flex-align-items-center">
+    <p
+      *ngIf="(getState$ | async)?.user?.name">
+          {{ 'Bienvenid@ ' + (getState$ | async)?.user?.name }}
+    </p>
+    <button
+      *ngIf="!(getState$ | async)?.isAuthenticated"
+      mat-button>
+      Iniciar Sesión
+    </button>
+    <button
+      *ngIf="(getState$ | async)?.isAuthenticated"
+      mat-button>
+      Cerrar Sesión
+    </button>
+  </div>
+
+</mat-toolbar>
