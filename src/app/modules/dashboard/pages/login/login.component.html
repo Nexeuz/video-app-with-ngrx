@@ -14,12 +14,21 @@
           [options]="options"
           [form]="formRegister">
         </formly-form>
-        <button type="submit"
-                [disabled]="formRegister.invalid"
-                color="accent"
-                mat-raised-button>
-          Iniciar sesión
-        </button>
+        <div class="d-flex d-flex-justify-space-between">
+          <button type="button"
+                  [routerLink]="'/'+routerRegister"
+                  color="accent"
+                  mat-button>
+            Registrarse
+          </button>
+          <button type="submit"
+                  [disabled]="formRegister.invalid"
+                  color="accent"
+                  mat-raised-button>
+            Iniciar sesión
+          </button>
+        </div>
+
       </form>
     </mat-card-content>
   </mat-card>

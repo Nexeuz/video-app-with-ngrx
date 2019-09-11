@@ -1,0 +1,19 @@
+  <mat-card
+    class="movies-card">
+    <mat-card-header>
+      <mat-card-title>{{ movie.title }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image
+         [src]="movie.img"
+         [alt]="movie.description">
+    <mat-card-content>
+      <p> {{ movie.description | slice:0:120 }} ...</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a
+        color="accent"
+        [routerLink]="['/'+detailRoute, movie.id]"
+        class="width-100"
+        mat-raised-button>Ver más detalles</a>
+    </mat-card-actions>
+  </mat-card>

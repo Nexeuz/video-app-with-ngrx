@@ -4,9 +4,9 @@ import {FormGroup, FormGroupDirective, NgForm} from '@angular/forms';
 import {FormModelRegister} from '../../../../core/models/form-model-register';
 import {AuthService} from '../../../../core/authentication/auth.service';
 import {Store} from '@ngrx/store';
-import {AppState} from '../../../../store/app-states';
+import {AppState} from '../../../../core/store/app-states';
 import {User} from '../../../../core/models/user';
-import {SignUp} from '../../../../store/actions/auth.actions';
+import {SignUp} from '../../../../core/store/actions/auth.actions';
 
 @Component({
   selector: 'vt-login',

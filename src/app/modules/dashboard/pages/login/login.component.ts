@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
-import {FormGroup, FormGroupDirective} from '@angular/forms';
+import {FormGroup, FormGroupDirective, Validators} from '@angular/forms';
 import {FormModelLogin} from '../../../../core/models/form-model-login';
 import {Store} from '@ngrx/store';
-import {AppState} from '../../../../store/app-states';
-import {LogIn} from '../../../../store/actions/auth.actions';
+import {AppState} from '../../../../core/store/app-states';
+import {LogIn} from '../../../../core/store/actions/auth.actions';
+import {RoutingPath} from '../../../../config/routing/routing-path';
 
 @Component({
   selector: 'vt-login',
@@ -13,6 +14,7 @@ import {LogIn} from '../../../../store/actions/auth.actions';
 })
 export class LoginComponent implements OnInit {
 
+  routerRegister = RoutingPath.appRouting.modules.dashboard.pages.register.path;
   formRegister = new FormGroup({});
   model: FormModelLogin = {};
   options: FormlyFormOptions = {};
@@ -30,9 +32,12 @@ export class LoginComponent implements OnInit {
         required: true,
       },
       validation: {
+        validation: Validators.email,
         messages: {
           required: (error, field: FormlyFieldConfig) => 'Este campo es requerido',
+
         },
+
       },
     },
     {

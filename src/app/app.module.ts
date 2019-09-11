@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
-import {AuthEffectsService} from './store/effects/auth-effects.service';
+import {AuthEffectsService} from './core/store/effects/auth-effects.service';
 import {FormlyModule} from '@ngx-formly/core';
 import {StoreModule} from '@ngrx/store';
-import {reducers} from './store/app-states';
+import {reducers} from './core/store/app-states';
 import {SharedModule} from './shared/shared.module';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {MatSnackBarModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
     EffectsModule.forRoot([AuthEffectsService]),
     FormlyModule.forRoot(),
     SharedModule,
+    MatSnackBarModule
 
   ],
   providers: [],

@@ -6,20 +6,25 @@
   <div
     id="container-header"
     class="d-flex d-flex-align-items-center">
-    <p
-      *ngIf="(getState$ | async)?.user?.name">
-          {{ 'Bienvenid@ ' + (getState$ | async)?.user?.name }}
-    </p>
-    <button
+    <a
+      [routerLink]="'/'+routeAdmin"
+      *ngIf="(getState$ | async)?.user?.isAdmin"
+      mat-button>
+      <mat-icon>store_mall_directory</mat-icon>
+      Administración
+    </a>
+    <a
+      [routerLink]="'/'+routeLogin"
       *ngIf="!(getState$ | async)?.isAuthenticated"
       mat-button>
       Iniciar Sesión
-    </button>
-    <button
+    </a>
+    <a
+      (click)="signOut()"
       *ngIf="(getState$ | async)?.isAuthenticated"
-      mat-button>
-      Cerrar Sesión
-    </button>
+      mat-icon-button>
+      <mat-icon>input</mat-icon>
+    </a>
   </div>
 
 </mat-toolbar>

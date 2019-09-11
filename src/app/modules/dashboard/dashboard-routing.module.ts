@@ -4,6 +4,10 @@ import {RoutingPath} from '../../config/routing/routing-path';
 import {RegisterComponent} from './pages/register/register.component';
 import {LoginComponent} from './pages/login/login.component';
 import {DashboardComponent} from './dashboard.component';
+import {NoLoggedGuard} from '../../core/guards/no-logged.guard';
+import {MoviesListComponent} from './pages/movies-list/movies-list.component';
+import {MovieDetailComponent} from './pages/movie-detail/movie-detail.component';
+import {DetailPeliculaResolver} from '../../core/resolvers/detail-pelicula-resolver';
 
 
 const routes: Routes = [
@@ -12,19 +16,32 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {
+        path: '',
+        component:  MoviesListComponent
+      },
+      {
         path: RoutingPath.appRouting.modules.dashboard.pages.register.path,
-        component: RegisterComponent
+        component: RegisterComponent,
+        canActivate: [NoLoggedGuard]
       },
       {
         path: RoutingPath.appRouting.modules.dashboard.pages.login.path,
-        component: LoginComponent
+        component: LoginComponent,
+        canActivate: [NoLoggedGuard]
       },
+      {
+        path: RoutingPath.appRouting.modules.dashboard.pages.movie_detail.pathParam,
+        component: MovieDetailComponent,
+        resolve: {
+          resolverData: DetailPeliculaResolver
+        }
+      }
     ]
   }
   ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class DashboardRoutingModule { }

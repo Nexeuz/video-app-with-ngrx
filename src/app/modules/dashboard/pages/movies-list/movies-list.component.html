@@ -1,0 +1,55 @@
+
+<div
+  class="row center-xs middle-xs">
+    <div class="col-xs-12 col-md-4">
+     <mat-form-field class="width-100"
+                     appearance="outline">
+       <mat-label>Buscar títulos de películas</mat-label>
+       <input
+         (keyup)="search()"
+         (keyup.enter)="search()"
+         [formControl]="controlSearch"
+         placeholder="Escribe el título completo de la película"
+        matInput>
+       <mat-hint>Escribe mínimo 3 carácteres</mat-hint>
+       <button
+         matSuffix
+         color="accent"
+         mat-icon-button>
+         <mat-icon>
+           search
+         </mat-icon>
+       </button>
+     </mat-form-field>
+    </div>
+  <div class="col-md-2 col-xs-12">
+    <button
+      (click)="reset()"
+      [disabled]="controlSearch.value ? !controlSearch.value.length > 3 : true"
+      color="accent"
+     mat-raised-button>
+      <mat-icon>filter_list</mat-icon>
+      Limpiar filtro
+    </button>
+  </div>
+</div>
+<ng-container
+  *ngIf="(moviesObs$ | async) as movie">
+  <div class="row container-movie">
+    <vt-movies
+      class="col-md-3 col- col-xs-12"
+      *ngFor="let movie of movie"
+      [movie]="movie">
+    </vt-movies>
+    <ng-container *ngIf="movie.length === 0">
+      <div class="row center-xs width-100">
+        <div class="col-xs-12 col-md-9">
+          <h4 class="mat-subheading-1">
+            No hay películas con el título especificado
+          </h4>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+</ng-container>

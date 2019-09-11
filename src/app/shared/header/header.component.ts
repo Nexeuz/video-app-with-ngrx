@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
-import {AppState, selectAuthState} from '../../store/app-states';
+import {AppState, selectAuthState} from '../../core/store/app-states';
 import {Observable} from 'rxjs';
 import {share} from 'rxjs/operators';
-import {State as AuthState} from '../../store/reducers/auth.reducers';
+import {State as AuthState} from '../../core/store/reducers/auth.reducers';
+import {RoutingPath} from '../../config/routing/routing-path';
+import {LogOut} from '../../core/store/actions/auth.actions';
 
 @Component({
   selector: 'vt-header',
@@ -12,12 +14,19 @@ import {State as AuthState} from '../../store/reducers/auth.reducers';
 })
 export class HeaderComponent implements OnInit {
   getState$: Observable<AuthState | any>;
+  routeAdmin = RoutingPath.appRouting.modules.admin.path;
+  routeLogin = RoutingPath.appRouting.modules.dashboard.pages.login.path;
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
     this.getState$ = this.store.select(selectAuthState)
-       .pipe(
-       );
+       .pipe();
   }
+
+
+  signOut() {
+    this.store.dispatch(new LogOut());
+  }
+
 
 }

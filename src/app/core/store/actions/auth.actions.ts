@@ -1,6 +1,6 @@
 import {Action, createFeatureSelector} from '@ngrx/store';
 import {AppState} from '../app-states';
-import {User} from '../../core/models/user';
+import {User} from '../../models/user';
 
 
 export enum AuthActionTypes {
@@ -25,7 +25,7 @@ export class LogInSuccess implements Action {
 
 export class LogInFailure implements Action {
   readonly type = AuthActionTypes.LOGIN_FAILURE;
-  constructor(public payload: any) {}
+  constructor(public payload?: any) {}
 }
 
 

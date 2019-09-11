@@ -1,10 +1,13 @@
-import {Injectable} from '@angular/core';
-import {AuthService} from '../../core/authentication/auth.service';
-import {Router} from '@angular/router';
+import {Injectable, NgZone} from '@angular/core';
+import {AuthService} from '../../authentication/auth.service';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {AuthActionTypes, LogIn, LogInFailure, LogInSuccess, SignUp, SignUpFailure, SignUpSuccess} from '../actions/auth.actions';
 import {Observable, of} from 'rxjs';
-import {catchError, map, switchMap} from 'rxjs/operators';
+import {catchError, map, switchMap, take, tap} from 'rxjs/operators';
+import {MatSnackBar} from '@angular/material';
+import {AppConfig} from '../../../config/app/app-config';
+import {LocalStorageService} from '../../local-storage/local-storage.service';
 
 @Injectable()
 export class AuthEffectsService {
@@ -13,6 +16,10 @@ export class AuthEffectsService {
     private actions: Actions,
     private authService: AuthService,
     private router: Router,
+    private active: ActivatedRoute,
+    private _SNACK: MatSnackBar,
+    private _NGZONE: NgZone,
+    private _LOCALSTORAGE: LocalStorageService
   ) {
   }
 
@@ -25,16 +32,24 @@ export class AuthEffectsService {
         return this.authService.login(payload.email, payload.password)
           .pipe(
             map((user) => {
-              return new LogInSuccess(
-                {
-                  id: user.id,
-                  email: payload.email,
-                  isAdmin: user.isAdmin,
-                  name: user.name,
-                  password: user.password,
-                  age: user.age
-                }
-              );
+              if (user.length > 0) {
+                this._LOCALSTORAGE.stringifyItem(AppConfig.user(), user[0]);
+                this.router.navigate([`''`], {relativeTo: this.active});
+                return new LogInSuccess(
+                  {
+                    ...user[0]
+                  }
+                );
+              } else {
+                this._SNACK.open(
+                  'Usuario contraseña inválidos',
+                  'Ok',
+                  {
+                    duration: 6000
+                  }
+                );
+                return new LogInFailure();
+              }
             }),
             catchError((error) => {
               console.log(error);
@@ -63,6 +78,16 @@ export class AuthEffectsService {
           );
       })
     );
+
+  @Effect({dispatch: false})
+  LogOut: Observable<any> = this.actions
+    .pipe(
+    ofType(AuthActionTypes.LOGOUT),
+    tap(result => {
+      this._LOCALSTORAGE.clear();
+      this.router.navigateByUrl('/');
+    }),
+  );
 
   @Effect({ dispatch: false })
   AuthFailure: Observable<any> = this.actions.pipe(

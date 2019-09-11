@@ -1,0 +1,57 @@
+<div class="row padding-20 center-xs middle-xs">
+  <mat-card
+    class="register-card col-md-8  col-xs-12 ">
+    <mat-card-header>
+      <mat-card-title>Detalle de pelicula - {{ movieData?.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <img alt="Movie logo" [src]="movieData?.img">
+        </div>
+        <div class="col-md-6 col-xs-12 ">
+          <h4 class="mat-body-strong">
+            Resumen
+          </h4>
+            <p class="text-justify">
+              {{ movieData?.description }}
+            </p>
+
+          <div class="row text-center">
+            <div class="col-md-6 col-xs-12 text-left">
+              <h4 class="mat-body-strong">
+                Lista de actores
+              </h4>
+              <ul>
+                <li *ngFor="let actor of movieData.actorList">
+                  {{actor }}
+                </li>
+              </ul>
+            </div>
+          </div>
+            <div class="col-xs-12 d-flex d-flex-justify-center">
+              <mat-chip-list>
+                <mat-chip>Reservas restantes - {{ movieData.quantity }}</mat-chip>
+              </mat-chip-list>
+            </div>
+        </div>
+      </div>
+
+
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="row around-xs">
+
+        <div
+          *ngIf="(getState$ | async)?.isAuthenticated"
+          class="col-xs-12 text-right">
+          <button
+            color="accent"
+            mat-raised-button>
+            Reservar
+          </button>
+        </div>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
