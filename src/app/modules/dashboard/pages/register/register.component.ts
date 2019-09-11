@@ -7,6 +7,7 @@ import {Store} from '@ngrx/store';
 import {AppState} from '../../../../core/store/app-states';
 import {User} from '../../../../core/models/user';
 import {SignUp} from '../../../../core/store/actions/auth.actions';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'vt-login',
@@ -155,7 +156,8 @@ export class RegisterComponent implements OnInit {
   ];
 
   constructor(private _AUTH: AuthService,
-              private store: Store<AppState>) { }
+              private store: Store<AppState>,
+              private router: Router) { }
 
   ngOnInit() {
   }
@@ -172,6 +174,7 @@ export class RegisterComponent implements OnInit {
     this.store.dispatch(new SignUp({...user}));
 
     form.resetForm();
+    this.router.navigate(['']);
 
   }
 

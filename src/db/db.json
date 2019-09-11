@@ -7,6 +7,38 @@
       "id": 1,
       "email": "nicolasfalla15@gmail.com",
       "name": "Nico"
+    },
+    {
+      "age": 22,
+      "password": "1234",
+      "isAdmin": false,
+      "id": 2,
+      "email": "nicks.falla@gmail.com",
+      "name": "Nicolas Falla"
+    },
+    {
+      "age": 21,
+      "password": "1234",
+      "isAdmin": false,
+      "id": 3,
+      "email": "prueba@prueba.com",
+      "name": "Nicolas"
+    },
+    {
+      "age": 2,
+      "password": "1234",
+      "isAdmin": false,
+      "id": 4,
+      "email": "nicolasfalla1511@gmail.com",
+      "name": "Nicolas"
+    },
+    {
+      "age": 22,
+      "password": "1234",
+      "isAdmin": false,
+      "id": 5,
+      "email": "nicolasfalla15@gmail.coaaam",
+      "name": "Nicolas"
     }
   ],
   "rol": [
@@ -29,7 +61,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -41,7 +77,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -53,7 +93,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -65,7 +109,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -77,7 +125,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -89,7 +141,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -101,7 +157,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -113,7 +173,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -125,7 +189,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -137,7 +205,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -149,7 +221,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -161,9 +237,14 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
-    },    {
+    },
+    {
       "id": 12,
       "title": "Lorem ipsum",
       "description": " consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
@@ -172,7 +253,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -184,7 +269,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -196,7 +285,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -208,7 +301,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -220,7 +317,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -232,9 +333,14 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
-    },    {
+    },
+    {
       "id": 18,
       "title": "Lorem ipsum",
       "description": " consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
@@ -243,7 +349,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -255,7 +365,11 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     },
     {
@@ -267,9 +381,12 @@
       "price": 20000,
       "quantity": 10,
       "actorList": [
-        "Will Smith", "Johnny Depp", "Adam Sandler", "Vin Diesel", "Jackie Chan"
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
       ]
     }
-
   ]
 }

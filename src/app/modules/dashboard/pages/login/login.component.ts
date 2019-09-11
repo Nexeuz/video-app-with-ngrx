@@ -6,6 +6,7 @@ import {Store} from '@ngrx/store';
 import {AppState} from '../../../../core/store/app-states';
 import {LogIn} from '../../../../core/store/actions/auth.actions';
 import {RoutingPath} from '../../../../config/routing/routing-path';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'vt-login',
@@ -56,7 +57,8 @@ export class LoginComponent implements OnInit {
       },
     },
   ];
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>,
+              private router: Router) { }
 
   ngOnInit() {
   }
@@ -64,6 +66,7 @@ export class LoginComponent implements OnInit {
   submit(form: FormGroupDirective) {
     this.store.dispatch(new LogIn({email: this.model.email, password: this.model.password}));
     form.resetForm();
+    this.router.navigate(['']);
   }
 
 }

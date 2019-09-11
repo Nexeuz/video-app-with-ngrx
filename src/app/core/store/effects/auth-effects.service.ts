@@ -69,6 +69,8 @@ export class AuthEffectsService {
           .pipe(
             map((user) => {
               console.log(user);
+              this._LOCALSTORAGE.stringifyItem(AppConfig.user(), user);
+              this.router.navigate([`''`], {relativeTo: this.active});
               return new SignUpSuccess({ ...user });
             }),
             catchError((error) => {
