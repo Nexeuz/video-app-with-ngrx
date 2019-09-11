@@ -4,12 +4,12 @@ This projecto fue generado con  [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Correr `ng serve -o`. navegar a `http://localhost:4200/`. La app automaticamente se recargará si haces cambios.
+Correr `ng serve -o` La app automaticamente se recargará si haces cambios.
 
 ## Code scaffolding
 
 
 ## Build
 
-Run `npm run server` en la raíz del proyecto para ejecutar la base de datos local json-server.
+Correr `npm run server` en la raíz del proyecto para ejecutar la base de datos local json-server.
 
