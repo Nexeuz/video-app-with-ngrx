@@ -2,7 +2,7 @@
   class="mat-elevation-z5 mg-btn-40 d-flex d-flex-justify-space-between"
   color="primary">
   <button
-    *ngIf="(getState$ | async)?.isAuthenticated"
+    *ngIf="(getState$ | async)?.isAuthenticated && !hideHamburger"
     (click)="sideNav.toggle()"
     mat-icon-button>
     <mat-icon>

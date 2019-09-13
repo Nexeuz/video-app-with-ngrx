@@ -14,6 +14,7 @@ import {MatSidenav} from '@angular/material';
 })
 export class HeaderComponent implements OnInit {
   @Input() sideNav: MatSidenav;
+  @Input() hideHamburger = false;
   getState$: Observable<AuthState | any>;
   routeAdmin = RoutingPath.appRouting.modules.admin.path;
   routeLogin = RoutingPath.appRouting.modules.dashboard.pages.login.path;
