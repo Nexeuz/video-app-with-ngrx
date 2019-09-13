@@ -39,6 +39,46 @@
       "id": 5,
       "email": "nicolasfalla15@gmail.coaaam",
       "name": "Nicolas"
+    },
+    {
+      "age": 1,
+      "password": "1234",
+      "isAdmin": true,
+      "id": 6,
+      "email": "nicolasfalla15@gmail.com",
+      "name": "nicks.falla@gmail.comaa"
+    },
+    {
+      "age": 22,
+      "password": "1234",
+      "isAdmin": false,
+      "id": 7,
+      "email": "nicolasfalla15@gmail.comaa",
+      "name": "wwww1"
+    },
+    {
+      "age": 11,
+      "password": "1234",
+      "isAdmin": false,
+      "id": 8,
+      "email": "nicolas@gmail.com",
+      "name": "nicolas"
+    },
+    {
+      "age": 2,
+      "password": "1234",
+      "isAdmin": false,
+      "id": 9,
+      "email": "aaa",
+      "name": "nicks.falla@gmail.com"
+    },
+    {
+      "age": 22,
+      "password": "123",
+      "isAdmin": false,
+      "id": 10,
+      "email": "n@gmail.com",
+      "name": "Hola"
     }
   ],
   "rol": [
@@ -387,6 +427,88 @@
         "Vin Diesel",
         "Jackie Chan"
       ]
+    }
+  ],
+  "my-movies": [
+    {
+      "title": "Lorem ipsum",
+      "description": " consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+      "img": "https://tfwiki.net/mediawiki/images2/thumb/9/96/BumblebeeMovieNewPoster.jpeg/300px-BumblebeeMovieNewPoster.jpeg",
+      "director": "Nicolas Falla",
+      "price": 20000,
+      "quantity": 10,
+      "actorList": [
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
+      ],
+      "id": 4
+    },
+    {
+      "title": "Lorem ipsum",
+      "description": " consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+      "img": "https://tfwiki.net/mediawiki/images2/thumb/9/96/BumblebeeMovieNewPoster.jpeg/300px-BumblebeeMovieNewPoster.jpeg",
+      "director": "Nicolas Falla",
+      "price": 20000,
+      "quantity": 10,
+      "actorList": [
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
+      ],
+      "id": 8
+    },
+    {
+      "title": "Musical",
+      "description": " consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+      "img": "https://tfwiki.net/mediawiki/images2/thumb/9/96/BumblebeeMovieNewPoster.jpeg/300px-BumblebeeMovieNewPoster.jpeg",
+      "director": "Nicolas Falla",
+      "price": 20000,
+      "quantity": 10,
+      "actorList": [
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
+      ],
+      "id": 9
+    },
+    {
+      "title": "Lorem ipsum",
+      "description": " consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+      "img": "https://tfwiki.net/mediawiki/images2/thumb/9/96/BumblebeeMovieNewPoster.jpeg/300px-BumblebeeMovieNewPoster.jpeg",
+      "director": "Nicolas Falla",
+      "price": 20000,
+      "quantity": 10,
+      "actorList": [
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
+      ],
+      "id": 10
+    },
+    {
+      "title": "Hola",
+      "description": " consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
+      "img": "https://tfwiki.net/mediawiki/images2/thumb/9/96/BumblebeeMovieNewPoster.jpeg/300px-BumblebeeMovieNewPoster.jpeg",
+      "director": "Nicolas Falla",
+      "price": 20000,
+      "quantity": 10,
+      "actorList": [
+        "Will Smith",
+        "Johnny Depp",
+        "Adam Sandler",
+        "Vin Diesel",
+        "Jackie Chan"
+      ],
+      "id": 11
     }
   ]
 }

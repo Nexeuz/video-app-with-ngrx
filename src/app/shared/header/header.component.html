@@ -1,7 +1,15 @@
 <mat-toolbar
   class="mat-elevation-z5 mg-btn-40 d-flex d-flex-justify-space-between"
   color="primary">
-  <h1>Videos tarzán</h1>
+  <button
+    *ngIf="(getState$ | async)?.isAuthenticated"
+    (click)="sideNav.toggle()"
+    mat-icon-button>
+    <mat-icon>
+      menu
+    </mat-icon>
+  </button>
+  <h1 routerLink="/">Videos tarzán</h1>
 
   <div
     id="container-header"
@@ -14,7 +22,7 @@
       Administración
     </a>
     <a
-      [routerLink]="'/'+routeLogin"
+      [routerLink]="routeLogin"
       *ngIf="!(getState$ | async)?.isAuthenticated"
       mat-button>
       Iniciar Sesión

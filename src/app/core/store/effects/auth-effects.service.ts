@@ -34,7 +34,7 @@ export class AuthEffectsService {
             map((user) => {
               if (user.length > 0) {
                 this._LOCALSTORAGE.stringifyItem(AppConfig.user(), user[0]);
-                this.router.navigate([`''`], {relativeTo: this.active});
+                this.router.navigate([`'/'`]);
                 return new LogInSuccess(
                   {
                     ...user[0]
@@ -70,7 +70,7 @@ export class AuthEffectsService {
             map((user) => {
               console.log(user);
               this._LOCALSTORAGE.stringifyItem(AppConfig.user(), user);
-              this.router.navigate([`''`], {relativeTo: this.active});
+              this.router.navigate([`'/'`], {relativeTo: this.active});
               return new SignUpSuccess({ ...user });
             }),
             catchError((error) => {

@@ -1,0 +1,28 @@
+<h2 class="mat-display-2">
+ Mis peliculas
+</h2>
+
+<p class="subheading-2">
+  En esta sección encontrarás todas las peliculas que has reservado, puedes eliminar tus peliculas dando clic en:
+  <strong>Eliminar reserva</strong>
+</p>
+<ng-container
+  *ngIf="(obsMyMovies$ | async) as movie">
+<div class="row container-movie">
+  <vt-movies
+    [isMyMovies]="true"
+    class="col-md-3 col- col-xs-12"
+    *ngFor="let movie of movie"
+    [movie]="movie">
+  </vt-movies>
+  <ng-container *ngIf="movie.length === 0">
+    <div class="row center-xs width-100">
+      <div class="col-xs-12 col-md-9">
+        <h4 class="mat-subheading-1">
+         No tienes reservas en este momento, ¡Empieza a reservar en la página principal!
+        </h4>
+      </div>
+    </div>
+  </ng-container>
+</div>
+</ng-container>

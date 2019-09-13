@@ -1,12 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {dashboardState} from '../../store/dashboard-state';
-import {State as MovieState} from '../../store/reducers/movies.reducers';
+import { State as MovieState} from '../../store/reducers/movies.reducers';
 import {GetMovies} from '../../store/actions/movies.actions';
 import {Observable, of, Subject} from 'rxjs';
 import {FormControl} from '@angular/forms';
 import {MoviesService} from '../../services/movies.service';
 import {debounceTime, distinctUntilChanged, filter, map, switchMap, take, takeUntil} from 'rxjs/operators';
+import {AppState, dashboardState} from '../../../../core/store/app-states';
 
 @Component({
   selector: 'vt-movies-list',
@@ -18,7 +18,7 @@ export class MoviesListComponent implements OnInit, OnDestroy {
   subject$: Subject<boolean> = new Subject<boolean>();
   moviesObs$: Observable<any>;
 
-  constructor(private store: Store<MovieState | any>,
+  constructor(private store: Store<MovieState>,
               private _MOVIES: MoviesService) {
     this.store.dispatch(new GetMovies());
     this.moviesObs$ = this.store.select(dashboardState)
@@ -42,7 +42,6 @@ export class MoviesListComponent implements OnInit, OnDestroy {
           debounceTime(500),
           distinctUntilChanged(),
           switchMap(value => {
-            console.log(value);
             if (value) {
               return this._MOVIES.getMovieList(value);
             } else {

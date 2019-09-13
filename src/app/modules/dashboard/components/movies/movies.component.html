@@ -10,10 +10,25 @@
       <p> {{ movie.description | slice:0:120 }} ...</p>
     </mat-card-content>
     <mat-card-actions>
-      <a
-        color="accent"
-        [routerLink]="['/'+detailRoute, movie.id]"
-        class="width-100"
-        mat-raised-button>Ver más detalles</a>
+      <div class="mg-btn-10">
+        <button
+          *ngIf="isMyMovies"
+          color="warn"
+          (click)="deleteMovie()"
+          class="width-100"
+          mat-raised-button>
+          Eliminar Reserva
+        </button>
+      </div>
+      <div>
+        <a
+          color="accent"
+          [routerLink]="[detailRoute, movie.id]"
+          class="width-100"
+          mat-raised-button>
+          Ver más detalles
+        </a>
+      </div>
+
     </mat-card-actions>
   </mat-card>

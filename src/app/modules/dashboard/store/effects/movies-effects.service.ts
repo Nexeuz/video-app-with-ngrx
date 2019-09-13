@@ -2,21 +2,22 @@ import {Injectable, NgZone} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {Observable, of} from 'rxjs';
-import {catchError, map, switchMap, take, tap} from 'rxjs/operators';
+import {catchError, map, switchMap} from 'rxjs/operators';
 import {MatSnackBar} from '@angular/material';
 import {LocalStorageService} from '../../../../core/local-storage/local-storage.service';
-import {AuthService} from '../../../../core/authentication/auth.service';
 import {
-  DeleteMovie, DeleteMovieFailure, DeleteMovieSuccess,
-  GetMovies,
+  DeleteMyMovie, DeleteMovieFailure, DeleteMovieSuccess,
   GetMoviesFailure,
-  GetMoviesSuccess,
+  GetMoviesSuccess, GetMyMoviesFailure, GetMyMoviesSuccess,
   MovieActionTypes,
   SaveMovie,
   SaveMovieFailure,
-  SaveMovieSuccess
+  SaveMovieSuccess, GetMyMovies
 } from '../actions/movies.actions';
 import {MoviesService} from '../../services/movies.service';
+import {Store} from '@ngrx/store';
+import {AppState} from '../../../../core/store/app-states';
+import {State as MovieState} from '../reducers/movies.reducers';
 
 @Injectable()
 export class MoviesEffectsService {
@@ -25,6 +26,7 @@ export class MoviesEffectsService {
     private actions: Actions,
     private _MOVIES_SERVICE: MoviesService,
     private router: Router,
+    private store: Store<MovieState>,
     private active: ActivatedRoute,
     private _SNACK: MatSnackBar,
     private _NGZONE: NgZone,
@@ -33,16 +35,33 @@ export class MoviesEffectsService {
   }
 
   @Effect()
+  getMyMovies: Observable<any> = this.actions
+    .pipe(
+      ofType(MovieActionTypes.GET_MY_MOVIES),
+      switchMap(payload => {
+        return this._MOVIES_SERVICE.getMyMovieList()
+          .pipe(
+            map(myMovies => {
+              return new GetMyMoviesSuccess(myMovies);
+            }),
+            catchError(err => {
+              return of(new GetMyMoviesFailure());
+            })
+          );
+      })
+    );
+
+  @Effect()
   movieList: Observable<any> = this.actions
     .pipe(
-      ofType(MovieActionTypes.GET_MOVIE),
+      ofType(MovieActionTypes.GET_MOVIES),
       switchMap(payload => {
         return this._MOVIES_SERVICE.getMovieList()
           .pipe(
             map((movie) => {
               if (movie.length > 0) {
                 return new GetMoviesSuccess(
-                    [...movie]
+                  [...movie]
                 );
               } else {
                 this._SNACK.open(
@@ -93,7 +112,7 @@ export class MoviesEffectsService {
             }),
             catchError((error) => {
               this._SNACK.open(
-                'Error al  tratat de recuperar las peliculas',
+                'Error al  tratar de recuperar las peliculas',
                 'Ok',
                 {
                   duration: 6000
@@ -109,7 +128,7 @@ export class MoviesEffectsService {
   deleteMovie: Observable<any> = this.actions
     .pipe(
       ofType(MovieActionTypes.DELETE_MOVIE),
-      map((action: DeleteMovie) => action),
+      map((action: DeleteMyMovie) => action),
       switchMap(action => {
         return this._MOVIES_SERVICE.removeMovie(action.id)
           .pipe(
@@ -121,6 +140,7 @@ export class MoviesEffectsService {
                   duration: 6000
                 }
               );
+              this.store.dispatch(new GetMyMovies());
               return new DeleteMovieSuccess();
             }),
             catchError((error) => {

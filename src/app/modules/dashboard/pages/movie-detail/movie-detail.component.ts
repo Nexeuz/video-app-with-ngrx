@@ -5,6 +5,7 @@ import {Store} from '@ngrx/store';
 import {AppState, selectAuthState} from '../../../../core/store/app-states';
 import {Observable} from 'rxjs';
 import {State as AuthState} from '../../../../core/store/reducers/auth.reducers';
+import {SaveMovie} from '../../store/actions/movies.actions';
 
 @Component({
   selector: 'vt-movie-detail',
@@ -23,4 +24,9 @@ export class MovieDetailComponent implements OnInit {
     console.log(this.activated.snapshot.data.resolverData);
   }
 
+
+  reserve() {
+    delete this.movieData.id;
+    this.store.dispatch(new SaveMovie(this.movieData));
+  }
 }

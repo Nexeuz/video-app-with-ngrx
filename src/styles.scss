@@ -26,6 +26,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding: 20px;
 }
 
+.mg-btn-10 {
+  margin-bottom: 10px;
+}
+.mg-btn-20 {
+  margin-bottom: 20px;
+}
+
+
+
 .mg-btn-40 {
   margin-bottom: 40px;
 }
@@ -48,4 +57,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .text-right {
   text-align: right;
+}
+.container-movie {
+  padding: 20px;
+  vt-movies {
+    margin-bottom: 40px;
+  }
 }

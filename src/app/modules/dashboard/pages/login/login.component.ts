@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
 import {FormGroup, FormGroupDirective, Validators} from '@angular/forms';
 import {FormModelLogin} from '../../../../core/models/form-model-login';
@@ -7,6 +7,9 @@ import {AppState} from '../../../../core/store/app-states';
 import {LogIn} from '../../../../core/store/actions/auth.actions';
 import {RoutingPath} from '../../../../config/routing/routing-path';
 import {Router} from '@angular/router';
+import {LocalStorageService} from '../../../../core/local-storage/local-storage.service';
+import {User} from '../../../../core/models/user';
+import {AppConfig} from '../../../../config/app/app-config';
 
 @Component({
   selector: 'vt-login',
@@ -36,9 +39,7 @@ export class LoginComponent implements OnInit {
         validation: Validators.email,
         messages: {
           required: (error, field: FormlyFieldConfig) => 'Este campo es requerido',
-
         },
-
       },
     },
     {
@@ -57,16 +58,22 @@ export class LoginComponent implements OnInit {
       },
     },
   ];
+
   constructor(private store: Store<AppState>,
-              private router: Router) { }
+              private router: Router,
+              private _LOCALSTORAGE: LocalStorageService) {
+  }
 
   ngOnInit() {
+    const authState = this._LOCALSTORAGE.parseItem<User>(AppConfig.user());
+    if (authState) {
+      this.store.dispatch(new LogIn({email: authState.email, password: authState.password}));
+    }
   }
 
   submit(form: FormGroupDirective) {
     this.store.dispatch(new LogIn({email: this.model.email, password: this.model.password}));
     form.resetForm();
-    this.router.navigate(['']);
   }
 
 }

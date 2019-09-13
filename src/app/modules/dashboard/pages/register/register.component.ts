@@ -10,10 +10,9 @@ import {SignUp} from '../../../../core/store/actions/auth.actions';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'vt-login',
+  selector: 'vt-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class RegisterComponent implements OnInit {
 

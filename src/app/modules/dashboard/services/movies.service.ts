@@ -29,6 +29,15 @@ export class MoviesService {
     return this.http.put<Movie>(this.BASE_URL + '/my-movies/' + id, {...movie});
   }
 
+  getMyMovieList(title?: string): Observable<Movie[]> {
+    if (title) {
+      const params = new HttpParams()
+        .set('title', `${ title }`);
+      return this.http.get<Movie[]>(this.BASE_URL + '/my-movies', {params});
+    }
+    return this.http.get<Movie[]>(this.BASE_URL + '/my-movies');
+  }
+
   saveMovie(movie: Movie): Observable<Movie> {
     return this.http.post<Movie>(this.BASE_URL + '/my-movies/', {...movie});
   }

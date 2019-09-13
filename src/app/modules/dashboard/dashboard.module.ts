@@ -10,7 +10,7 @@ import {
   MatChipsModule,
   MatFormFieldModule,
   MatIconModule,
-  MatInputModule, MatListModule
+  MatInputModule, MatListModule, MatSidenavModule
 } from '@angular/material';
 import {FormlyModule} from '@ngx-formly/core';
 import {FormlyMatFormFieldModule} from '@ngx-formly/material/form-field';
@@ -27,10 +27,11 @@ import { MoviesListComponent } from './pages/movies-list/movies-list.component';
 import {EffectsModule} from '@ngrx/effects';
 import {MoviesEffectsService} from './store/effects/movies-effects.service';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
+import { MyReservationsComponent } from './pages/my-reservations/my-reservations.component';
 
 
 @NgModule({
-  declarations: [RegisterComponent, LoginComponent, DashboardComponent, MoviesComponent, MoviesListComponent, MovieDetailComponent],
+  declarations: [RegisterComponent, LoginComponent, DashboardComponent, MoviesComponent, MoviesListComponent, MovieDetailComponent, MyReservationsComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
@@ -52,6 +53,7 @@ import { MovieDetailComponent } from './pages/movie-detail/movie-detail.componen
     MatBadgeModule,
     MatChipsModule,
     MatListModule,
+    MatSidenavModule,
   ],
   providers: [MoviesEffectsService]
 })

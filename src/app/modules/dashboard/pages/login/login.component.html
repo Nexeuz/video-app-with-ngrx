@@ -15,12 +15,12 @@
           [form]="formRegister">
         </formly-form>
         <div class="d-flex d-flex-justify-space-between">
-          <button type="button"
-                  [routerLink]="'/'+routerRegister"
+          <a
+                  [routerLink]="'../'+routerRegister"
                   color="accent"
                   mat-button>
             Registrarse
-          </button>
+          </a>
           <button type="submit"
                   [disabled]="formRegister.invalid"
                   color="accent"

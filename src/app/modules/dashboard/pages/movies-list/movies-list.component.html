@@ -25,7 +25,7 @@
   <div class="col-md-2 col-xs-12">
     <button
       (click)="reset()"
-      [disabled]="controlSearch.value ? !controlSearch.value.length > 3 : true"
+      [disabled]="controlSearch.value ? !( controlSearch.value.length > 3) : true"
       color="accent"
      mat-raised-button>
       <mat-icon>filter_list</mat-icon>

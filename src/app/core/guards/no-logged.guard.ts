@@ -22,7 +22,7 @@ export class NoLoggedGuard implements CanActivate {
     if (!authState) {
       return true;
     } else {
-      this.router.navigateByUrl('');
+      this.router.navigateByUrl('/');
     }
   }
 }

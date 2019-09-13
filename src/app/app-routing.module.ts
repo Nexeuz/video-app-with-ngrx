@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {RoutingPath} from './config/routing/routing-path';
 
 
 const routes: Routes = [
   {
     path: '',
+    redirectTo: RoutingPath.appRouting.modules.dashboard.path,
+    pathMatch: 'full'
+  },
+  {
+    path: RoutingPath.appRouting.modules.dashboard.path,
     loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: RoutingPath.appRouting.modules.dashboard.path,
     pathMatch: 'full'
-  }
+  },
 ];
 
 @NgModule({
