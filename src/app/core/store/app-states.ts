@@ -11,5 +11,5 @@ export const reducers = {
   auth: auth.reducer,
   dashboard: movies.reducer
 };
-export const selectAuthState = createFeatureSelector<AppState>('auth');
+export const selectAuthState = createFeatureSelector<auth.State>('auth');
 export const dashboardState = createFeatureSelector<movies.State>('dashboard');

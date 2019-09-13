@@ -13,13 +13,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       justify-content: space-between;
     }
 
+    &-end {
+      justify-content: flex-end;
+    }
+
   }
   &-align-items {
     &-center {
       align-items: center;
     }
   }
+
+
 }
+
 
 
 .padding-20 {
@@ -56,7 +63,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .text-right {
-  text-align: right;
+  text-align: right !important;
 }
 .container-movie {
   padding: 20px;

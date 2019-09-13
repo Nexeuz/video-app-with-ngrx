@@ -20,7 +20,19 @@ export class RoutingPath {
         }
       },
       admin: {
-        path: 'admin'
+        path: 'admin',
+        pages: {
+          list_movies: {
+            path: 'listar-peliculas'
+          },
+          create_movie: {
+            path: 'crear-pelicula'
+          },
+          edit_movie: {
+            path: 'editar-pelicula',
+            pathParam: 'editar-pelicula/:id'
+          },
+        }
       }
     }
   };

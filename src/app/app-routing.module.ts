@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {RoutingPath} from './config/routing/routing-path';
+import {AdminGuard} from './core/guards/admin.guard';
 
 
 const routes: Routes = [
@@ -12,6 +13,11 @@ const routes: Routes = [
   {
     path: RoutingPath.appRouting.modules.dashboard.path,
     loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
+  },
+  {
+    path: RoutingPath.appRouting.modules.admin.path,
+    loadChildren: () => import('./modules/administrator/administrator.module').then(m => m.AdministratorModule),
+    canActivate: [AdminGuard]
   },
   {
     path: '**',

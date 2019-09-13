@@ -39,7 +39,7 @@ const routes: Routes = [
       {
         path: RoutingPath.appRouting.modules.dashboard.pages.my_movies.path,
         component: MyReservationsComponent
-      }
+      },
     ]
   }
   ];

@@ -25,9 +25,7 @@ export class MoviesService {
     return  this.http.get<Movie | any | never>(`${this.BASE_URL}/movies/${id}`);
   }
 
-  updateMovie(movie: Movie, id: number): Observable<Movie> {
-    return this.http.put<Movie>(this.BASE_URL + '/my-movies/' + id, {...movie});
-  }
+
 
   getMyMovieList(title?: string): Observable<Movie[]> {
     if (title) {
